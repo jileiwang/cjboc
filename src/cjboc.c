@@ -213,7 +213,7 @@ int CJWordMatch(long long word1, int lang_id, long long word2) {
     }
     success = CJMapping(source_ch, lang_id, target_ch);
     // compare target_ch and each characters in word2
-    if (success) {
+    if (success >= 0) {
       cjboc_matched_count++;
       for (j = 0; j < len2; j += 3) {
         if (w2[j] == target_ch[0] && w2[j+1] == target_ch[1] && w2[j+2] == target_ch[2]) {
